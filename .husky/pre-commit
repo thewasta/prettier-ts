@@ -1,0 +1,30 @@
+#!/bin/sh
+echo '🛠️👷 Before to commit we are going to check your code style'
+
+npm run check:types ||
+(
+  echo '🚩❌ Failed typescript checks ❌🚩
+        Make changes required above'
+  false;
+)
+
+npm run check:prettier ||
+(
+  echo '🚩❌ Failed prettier requirements ❌🚩
+        Make changes required above or run `npm run prettier:fix`'
+  false;
+)
+
+npm run lint ||
+(
+  echo '🚩❌ Failed lint requirements ❌🚩
+        Make changes required above'
+  false;
+)
+
+
+# echo '✔ Your code styles looks good, I will try to run tests... ️✔️'
+
+echo '✅✅✅ Your code passed all... I am committing this now. ✅✅✅'
+
+

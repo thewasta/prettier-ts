@@ -1,0 +1,10 @@
+node_modules
+.idea
+
+.env
+
+
+# LOCK FILES
+yarn-lock*
+package-lock*
+pnpm-lock.yaml
